@@ -126,6 +126,12 @@ nativeImage {
     // if (currentPlatform == "windows") {
     //     finalizedBy removeUnneededDllFiles
     // }
+    
+    // On windows change subsystem after generating native executable:
+    //
+    // EDITBIN /SUBSYSTEM:WINDOWS <executable.exe>
+    //
+    // details: https://github.com/oracle/graal/issues/2256
 }
 
 generateNativeImageConfig {
