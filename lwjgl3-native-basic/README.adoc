@@ -1,0 +1,23 @@
+
+
+This project is based on link:https://github.com/chirontt/lwjgl3-helloworld-native[github lwjgl3-helloworld-native
+] example of compiling lwjgl project with graalvm to native image.
+The application is the HelloWorld link:https://www.lwjgl.org/guide[demo] for LWJGL 3.
+
+The aim of this project is to prot original gradle build script (groovy) to its kotlin script version.
+
+To compile native application you must install graalvm and specify its path as:
+
+ - `GRAALVM_HOME` environment variable
+
+or by
+
+ - `graalvmPath` property set in the "gradle.properties" file (the environment variable is checked first)
+
+When above is done just run the `nativeImage` gradle task, for instance by running in the console:
+
+```bash
+./gradlew nativeImage
+```
+
+
