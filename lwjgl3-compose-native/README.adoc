@@ -1,10 +1,15 @@
-
-
 This project is based on link:https://github.com/chirontt/lwjgl3-helloworld-native[github lwjgl3-helloworld-native
 ] example of compiling lwjgl project with graalvm to native image.
-The application is the HelloWorld link:https://www.lwjgl.org/guide[demo] for LWJGL 3.
 
-The aim of this project is to prot original gradle build script (groovy) to its kotlin script version.
+In this project we compile the Google/Jetbrains Compose Desktop running in the LWJGL window.
+The Compose Desktop still references multiple AWT elements under the hood. Thus it is not straightforward
+to configure graalvm for compilation. In this project we have used the tracing agent ($GRAAL_HOME/bin/java -agentlib:native-image-agent=config-output-dir=/path/to/output) to generate config files stored under /src/main/resources/META-INF.native-image:
+
+ . jni-conifg.json
+ . reflect-config.json
+
+(rest config files are empty)
+
 
 To compile native application you must install graalvm and specify its path as:
 

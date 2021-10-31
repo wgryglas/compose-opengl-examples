@@ -1,0 +1,103 @@
+[
+  {
+    "name":"org.lwjgl.PointerBuffer",
+    "allDeclaredFields":true,
+    "allPublicFields":true,
+    "allDeclaredMethods":true,
+    "allPublicMethods":true,
+    "allDeclaredConstructors":true,
+    "allPublicConstructors":true,
+    "allDeclaredClasses":true,
+    "allPublicClasses":true
+  },
+  {
+    "name":"org.lwjgl.glfw.GLFW",
+    "allDeclaredFields":true
+  },
+  {
+    "name":"org.lwjgl.glfw.GLFWVidMode",
+    "allDeclaredFields":true,
+    "allPublicFields":true,
+    "allDeclaredMethods":true,
+    "allPublicMethods":true,
+    "allDeclaredConstructors":true,
+    "allPublicConstructors":true,
+    "allDeclaredClasses":true,
+    "allPublicClasses":true
+  },
+  {
+    "name":"org.lwjgl.opengl.GLCapabilities",
+    "allPublicFields":true
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$B",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$D",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$F",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$I",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$J",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$N",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$P",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$S",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$V",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CallbackI$Z",
+    "methods":[{"name":"callback","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.system.CustomBuffer",
+    "fields":[
+      {"name":"capacity"},
+      {"name":"container"},
+      {"name":"limit"},
+      {"name":"mark"},
+      {"name":"position"}
+    ]
+  },
+  {
+    "name":"org.lwjgl.system.Pointer$Default",
+    "fields":[{"name":"address"}]
+  },
+  {
+    "name":"org.lwjgl.system.Struct",
+    "fields":[{"name":"container"}]
+  },
+  {
+    "name":"sun.misc.Unsafe",
+    "allDeclaredFields":true
+  },
+  {
+    "name" : "kotlin.internal.jdk8.JDK8PlatformImplementations",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredFields" : true,
+    "allPublicFields" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  }
+]
