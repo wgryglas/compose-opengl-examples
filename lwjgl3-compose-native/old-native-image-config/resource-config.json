@@ -22,6 +22,7 @@
     {"pattern":"\\Qwindows/x64/org/lwjgl/openal/OpenAL.dll\\E"}, 
     {"pattern":"\\Qwindows/x64/org/lwjgl/opengl/lwjgl_opengl.dll\\E"}, 
     {"pattern":"\\Qwindows/x64/org/lwjgl/stb/lwjgl_stb.dll\\E"},
+
     {"pattern": "\\Qlibskiko-linux-x64.so\\E"},
     {"pattern": "\\Qlibskiko-linux-x64.so.sha256\\E"}
   ]},
