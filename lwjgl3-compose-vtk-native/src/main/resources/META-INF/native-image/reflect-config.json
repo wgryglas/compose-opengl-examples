@@ -1,0 +1,103 @@
+[
+  {
+    "name":"kotlin.internal.jdk8.JDK8PlatformImplementations",
+    "methods":[{"name":"<init>","parameterTypes":[] }]}
+  ,
+  {
+    "name":"org.lwjgl.opengl.GLCapabilities",
+    "allPublicFields":true}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$B",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$D",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$F",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$I",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$J",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$N",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$P",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$S",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$V",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CallbackI$Z",
+    "queriedMethods":[{"name":"callback","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"org.lwjgl.system.CustomBuffer",
+    "fields":[
+      {"name":"capacity"},
+      {"name":"container"},
+      {"name":"limit"},
+      {"name":"mark"},
+      {"name":"position"}
+    ]}
+  ,
+  {
+    "name":"org.lwjgl.system.Pointer$Default",
+    "fields":[{"name":"address"}]}
+  ,
+  {
+    "name":"sun.awt.X11.XToolkit",
+    "methods":[{"name":"<init>","parameterTypes":[] }]}
+  ,
+  {
+    "name":"sun.awt.X11GraphicsEnvironment",
+    "methods":[{"name":"<init>","parameterTypes":[] }]}
+  ,
+  {
+    "name":"sun.java2d.marlin.DMarlinRenderingEngine",
+    "methods":[{"name":"<init>","parameterTypes":[] }]}
+  ,
+  {
+    "name":"sun.misc.Unsafe",
+    "allDeclaredFields":true}
+  ,
+  {
+    "name":"vtk.vtkOpenGLCamera",
+    "methods":[{"name":"<init>","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"vtk.vtkOpenGLProperty",
+    "methods":[{"name":"<init>","parameterTypes":["long"] }]}
+  ,
+  {
+    "name":"vtk.vtkPolyData",
+    "methods":[{"name":"<init>","parameterTypes":["long"] }]
+  },
+  {
+    "name":"org.lwjgl.PointerBuffer",
+    "allDeclaredFields":true,
+    "allPublicFields":true,
+    "allDeclaredMethods":true,
+    "allPublicMethods":true,
+    "allDeclaredConstructors":true,
+    "allPublicConstructors":true,
+    "allDeclaredClasses":true,
+    "allPublicClasses":true
+  }
+]

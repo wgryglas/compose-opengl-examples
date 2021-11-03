@@ -1,0 +1,28 @@
+This project is based on link:https://github.com/chirontt/lwjgl3-helloworld-native[github lwjgl3-helloworld-native
+] example of compiling lwjgl project with graalvm to native image.
+
+In this project we compile the Google/Jetbrains Compose Desktop running in the LWJGL window.
+The Compose Desktop still references multiple AWT elements under the hood. Thus it is not straightforward
+to configure graalvm for compilation. In this project we have used the tracing agent ($GRAAL_HOME/bin/java -agentlib:native-image-agent=config-output-dir=/path/to/output) to generate config files stored under /src/main/resources/META-INF.native-image:
+
+ . jni-conifg.json
+ . reflect-config.json
+
+(rest config files are empty)
+
+
+To compile native application you must install graalvm and specify its path as:
+
+ - `GRAALVM_HOME` environment variable
+
+or by
+
+ - `graalvmPath` property set in the "gradle.properties" file (the environment variable is checked first)
+
+When above is done just run the `nativeImage` gradle task, for instance by running in the console:
+
+```bash
+./gradlew nativeImage
+```
+
+On windows you need to install and setup Visual Studio Toolchain

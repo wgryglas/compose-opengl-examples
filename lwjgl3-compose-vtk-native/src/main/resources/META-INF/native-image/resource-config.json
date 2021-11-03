@@ -1,0 +1,20 @@
+{
+  "resources":{
+  "includes":[
+    {"pattern":"\\Qlinux/x64/org/lwjgl/glfw/libglfw.so\\E"},
+    {"pattern":"\\Qlinux/x64/org/lwjgl/liblwjgl.so\\E"},
+    {"pattern":"\\Qlinux/x64/org/lwjgl/opengl/liblwjgl_opengl.so\\E"},
+    {"pattern":"\\Qlibskiko-linux-x64.so.sha256\\E"},
+
+    {"pattern":"\\Qlinux/x64/org/lwjgl/glfw/libglfw.dll\\E"},
+    {"pattern":"\\Qlinux/x64/org/lwjgl/liblwjgl.dll\\E"},
+    {"pattern":"\\Qlinux/x64/org/lwjgl/opengl/liblwjgl_opengl.dll\\E"},
+    {"pattern":"\\Qlibskiko-windows-x64.dll.sha256\\E"},
+    {"pattern": "\\Qicudtl.dat.sha256\\E"},
+
+    {"pattern":"\\Qorg/lwjgl/system/APIUtil.class\\E"}
+  ]},
+  "bundles":[{
+      "name":"sun.awt.resources.awt"
+    }]
+}
