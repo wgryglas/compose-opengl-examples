@@ -37,6 +37,7 @@ LWJGL3 library.
 
 Before you will run application open the "gradle.properties" file and adjust the *example* property. You can select one
 of the following demos:
+
  . *lwjgl3-rawogl* - LWJGL window with 3D scene rendered by calling OpenGL commands via LWJGL binding
  . *awt-rawogl* - AWT/Swing JFrame with 3D scene rendered to AWT Canvas by calling OpenGL commands via LWJGL
  . *lwjgl3-vtk* - LWJGL window with 3D scene rendered by invoking VTK rendering pipeline
