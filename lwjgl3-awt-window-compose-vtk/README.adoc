@@ -19,6 +19,7 @@ This example utilizes the LWJGL3 library to create the window and OpenGL context
 The trick allowing to do this was to clean up the OpenGL context from changes amended by Compose render function.
 
 Additionally to the 3D scene rendering under LWJGL3 window we have added example for integration in AWT:
+
  - LWJGL3 is integrated with AWT Canvas thanks to this project link:https://github.com/LWJGLX/lwjgl3-awt[LWJGLX-awt].
    LWJGLX-awt allows us to create AWT Canvas with already initialized OpenGL context that we can use for further rendering.
  - Compose then is run in the AWT Event Dispatch thread, the AWT events are forwarded to Compose framework.
