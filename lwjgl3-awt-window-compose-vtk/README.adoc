@@ -1,0 +1,47 @@
+= Integration of Compose for Desktop UI framework with 3D rendering under UI layer
+
+== Project overview ==
+
+This project is an example of integrating the Compose UI framework with OpenGL rendering.
+
+The Compose is used as an overlay layer on top of the 3D OpenGL rendered scene. The aim of this example is to
+test potential application of the Compose Framework to be used as a HUD for 3D applications/games
+
+Compose for desktop developed by the JetBrains Team integrates very well with Swing applications.
+But the framework is missing support for 3D rendering and nice integrations of its capabilities with already existing
+3D applications. At the moment people can use Compose applications with additional AWT heavy component that will serve
+as a 3D rendering surface (See JOGL AWT integrations or LWJGL AWT integrations).
+This however is very limited solution, because we can't put a nice UI over a 3D target surface. Thankfully the JetBrains
+team released a nice example showing how to integrate Compose Desktop with already existing OpenGL context link:https://github.com/JetBrains/compose-jb/tree/master/experimental/lwjgl-integration[Experimental LWJGL Compose Example]
+
+Basing on the above example we have prepared an example application with 3D scene rendered under Compose UI.
+This example utilizes the LWJGL3 library to create the window and OpenGL context.
+The trick allowing to do this was to clean up the OpenGL context from changes amended by Compose render function.
+
+Additionally to the 3D scene rendering under LWJGL3 window we have added example for integration in AWT:
+ - LWJGL3 is integrated with AWT Canvas thanks to this project link:https://github.com/LWJGLX/lwjgl3-awt[LWJGLX-awt].
+   LWJGLX-awt allows us to create AWT Canvas with already initialized OpenGL context that we can use for further rendering.
+ - Compose then is run in the AWT Event Dispatch thread, the AWT events are forwarded to Compose framework.
+The above approach can be used in place of regular OpenGL-AWT canvas in order to provide 2D overlay UI elements.
+
+This approach can be used also with any third party OpenGL frameworks. The only thing you need to do is to grab context
+and then invoke your custom OpenGL commands. In order to show these capabilities we have added example of using VTK
+library (c++ library for rendering scientific data with own binding to java).
+This example requires to have compiled vtk native libraries and jar.
+
+== Running examples ==
+Most of the dependencies are fetched form mvn via gradle dependencies. The only missing part is VTK native libraries and jar,
+which you will have to compile on your own. But this is not necessary to run other examples that are purely based on
+LWJGL3 library.
+
+Before you will run application open the "gradle.properties" file and adjust the *example* property. You can select one
+of the following demos:
+ . *lwjgl3-rawogl* - LWJGL window with 3D scene rendered by calling OpenGL commands via LWJGL binding
+ . *awt-rawogl* - AWT/Swing JFrame with 3D scene rendered to AWT Canvas by calling OpenGL commands via LWJGL
+ . *lwjgl3-vtk* - LWJGL window with 3D scene rendered by invoking VTK rendering pipeline
+ . *awt-vtk* - AWT/Swing JFrame with 3D scene rendered to AWT Canvas by invoking VTK rendering pipeline
+
+[NOTE]
+When you choose the VTK rendering you must also provide the following props to *gradle.properties* file: +
+*vtkLibDir*=.... +
+*vtkJarPath*=.../vtk.jar
