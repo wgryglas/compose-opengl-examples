@@ -1,13 +1,17 @@
 package awt
 
 import androidx.compose.ui.ComposeScene
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.input.mouse.MouseScrollOrientation
+import androidx.compose.ui.input.mouse.MouseScrollUnit
 import androidx.compose.ui.input.pointer.PointerEventType
 import org.lwjgl.opengl.awt.AWTGLCanvas
 import java.awt.event.*
 import androidx.compose.ui.input.key.KeyEvent as ComposeKeyEvent
 
 
+@OptIn(ExperimentalComposeUiApi::class)
 fun AWTGLCanvas.forwardEventsToCompose(scene: ComposeScene) {
     fun MouseEvent.toOffset() = Offset(x.toFloat(), y.toFloat())
 
@@ -78,4 +82,25 @@ fun AWTGLCanvas.forwardEventsToCompose(scene: ComposeScene) {
             scene.sendKeyEvent(ComposeKeyEvent(e))
         }
     })
+
+    //TODO AWT does not recognize vert/hor scrolling
+    addMouseWheelListener { event ->
+        when(event.scrollType) {
+            MouseWheelEvent.WHEEL_UNIT_SCROLL -> {
+                scene.sendPointerScrollEvent(
+                    position = event.toOffset(),
+                    delta = MouseScrollUnit.Line(event.unitsToScroll.toFloat()),
+                    orientation = MouseScrollOrientation.Vertical
+                )
+            }
+//            MouseWheelEvent.WHEEL_BLOCK_SCROLL -> {
+//                scene.sendPointerScrollEvent(
+//                    position = event.toOffset(),
+//                    delta = MouseScrollUnit.Line(event.unitsToScroll.toFloat()),
+//                    orientation = MouseScrollOrientation.Vertical
+//                )
+//            }
+        }
+    }
+
 }
