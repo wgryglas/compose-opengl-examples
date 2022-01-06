@@ -33,30 +33,48 @@
   "fields":[
     {"name":"appContext"}, 
     {"name":"background"}, 
+    {"name":"cursor"}, 
+    {"name":"enabled"}, 
+    {"name":"focusable"}, 
     {"name":"foreground"}, 
     {"name":"graphicsConfig"}, 
     {"name":"height"}, 
+    {"name":"parent"}, 
     {"name":"isPacked"}, 
     {"name":"name"}, 
     {"name":"peer"}, 
+    {"name":"visible"}, 
     {"name":"width"}, 
     {"name":"x"}, 
     {"name":"y"}
   ],
   "methods":[
+    {"name":"getFont_NoClientCode","parameterTypes":[] }, 
     {"name":"getLocationOnScreen_NoTreeLock","parameterTypes":[] }, 
-    {"name":"getParent_NoClientCode","parameterTypes":[] }
+    {"name":"getParent_NoClientCode","parameterTypes":[] },
+    {"name":"getToolkitImpl","parameterTypes":[] }, 
+    {"name":"isEnabledImpl","parameterTypes":[] }
   ]}
+,
+{
+  "name":"java.awt.Cursor",
+  "fields":[
+    {"name":"pData"}, 
+    {"name":"type"}
+  ],
+  "methods":[{"name":"setPData","parameterTypes":["long"] }]}
 ,
 {
   "name":"java.awt.Font",
   "fields":[
+    {"name":"name"}, 
     {"name":"pData"}, 
     {"name":"size"}, 
     {"name":"style"}
   ],
   "methods":[
     {"name":"getFamily_NoClientCode","parameterTypes":[] }, 
+    {"name":"getFont","parameterTypes":["java.lang.String"] }, 
     {"name":"getFontPeer","parameterTypes":[] }
   ]}
 ,
@@ -71,18 +89,56 @@
     {"name":"left"}, 
     {"name":"right"}, 
     {"name":"top"}
+  ],
+  "methods":[{"name":"<init>","parameterTypes":["int","int","int","int"] }]}
+,
+{
+  "name":"java.awt.Point",
+  "fields":[
+    {"name":"x"}, 
+    {"name":"y"}
+  ]}
+,
+{
+  "name":"java.awt.Toolkit",
+  "methods":[
+    {"name":"getDefaultToolkit","parameterTypes":[] }, 
+    {"name":"getFontMetrics","parameterTypes":["java.awt.Font"] }
+  ]}
+,
+{
+  "name":"java.awt.desktop.UserSessionEvent$Reason",
+  "fields":[
+    {"name":"CONSOLE"}, 
+    {"name":"LOCK"}, 
+    {"name":"REMOTE"}, 
+    {"name":"UNSPECIFIED"}
   ]}
 ,
 {
   "name":"java.awt.event.InputEvent",
-  "fields":[{"name":"modifiers"}]}
+  "fields":[{"name":"modifiers"}],
+  "methods":[{"name":"getButtonDownMasks","parameterTypes":[] }]}
 ,
 {
   "name":"java.awt.event.KeyEvent",
   "fields":[
+    {"name":"extendedKeyCode"}, 
     {"name":"isProxyActive"}, 
     {"name":"keyChar"}, 
-    {"name":"keyCode"}
+    {"name":"keyCode"}, 
+    {"name":"primaryLevelUnicode"}, 
+    {"name":"rawCode"}, 
+    {"name":"scancode"}
+  ]}
+,
+{
+  "name":"java.awt.event.MouseEvent",
+  "fields":[
+    {"name":"button"}, 
+    {"name":"causedByTouchEvent"}, 
+    {"name":"x"}, 
+    {"name":"y"}
   ]}
 ,
 {
@@ -486,6 +542,65 @@
 {
   "name":"sun.awt.X11GraphicsDevice",
   "fields":[{"name":"screen"}]}
+,
+{
+  "name":"sun.awt.AWTAutoShutdown",
+  "methods":[
+    {"name":"notifyToolkitThreadBusy","parameterTypes":[] }, 
+    {"name":"notifyToolkitThreadFree","parameterTypes":[] }
+  ]}
+,
+{
+  "name":"sun.awt.SunToolkit",
+  "methods":[{"name":"isTouchKeyboardAutoShowEnabled","parameterTypes":[] }]}
+,
+{
+  "name":"sun.awt.image.SunVolatileImage",
+  "fields":[{"name":"volSurfaceManager"}]}
+,
+{
+  "name":"sun.awt.image.VolatileSurfaceManager",
+  "fields":[{"name":"sdCurrent"}]}
+,
+{
+  "name":"sun.awt.windows.WClipboard",
+  "methods":[{"name":"lostSelectionOwnershipImpl","parameterTypes":[] }]}
+,
+{
+  "name":"sun.awt.windows.WComponentPeer",
+  "fields":[
+    {"name":"hwnd"}, 
+    {"name":"winGraphicsConfig"}
+  ],
+  "methods":[
+    {"name":"disposeLater","parameterTypes":[] }, 
+    {"name":"replaceSurfaceData","parameterTypes":[] }, 
+    {"name":"replaceSurfaceDataLater","parameterTypes":[] }
+  ]}
+,
+{
+  "name":"sun.awt.windows.WDesktopPeer",
+  "methods":[
+    {"name":"systemSleepCallback","parameterTypes":["boolean"] }, 
+    {"name":"userSessionCallback","parameterTypes":["boolean","java.awt.desktop.UserSessionEvent$Reason"] }
+  ]}
+,
+{
+  "name":"sun.awt.windows.WObjectPeer",
+  "fields":[
+    {"name":"createError"}, 
+    {"name":"destroyed"}, 
+    {"name":"pData"}, 
+    {"name":"target"}
+  ],
+  "methods":[{"name":"getPeerForTarget","parameterTypes":["java.lang.Object"] }]}
+,
+{
+  "name":"sun.awt.windows.WToolkit",
+  "methods":[
+    {"name":"displayChanged","parameterTypes":[] }, 
+    {"name":"windowsSettingChange","parameterTypes":[] }
+  ]}
 ,
 {
   "name":"sun.java2d.Disposer",

@@ -167,8 +167,8 @@ nativeBuild {
     buildArgs.add("--allow-incomplete-classpath")
 	buildArgs.add("-H:NativeLinkerOption=prefs.lib")
 
-    runtimeArgs.add("-Djava.awt.headless=false")
+//   runtimeArgs.add("-Djava.awt.headless=false")
 
-    agent.set(false)
+    agent.set(true)
     useFatJar.set(true)
 }
