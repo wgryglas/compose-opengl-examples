@@ -13,10 +13,12 @@
     {"pattern":"\\Qlinux/x64/org/lwjgl/glfw/libglfw_wayland.so\\E"},
 
 
-    {"pattern":"\\Qlinux/x64/org/lwjgl/glfw/libglfw.dll\\E"},
-    {"pattern":"\\Qlinux/x64/org/lwjgl/liblwjgl.dll\\E"},
-    {"pattern":"\\Qlinux/x64/org/lwjgl/opengl/liblwjgl_opengl.dll\\E"},
-    {"pattern":"\\Qlibskiko-linux-x64.dll.sha256\\E"},
+    {"pattern":"\\Qwindows/x64/org/lwjgl/glfw/glfw.dll\\E"},
+    {"pattern":"\\Qwindows/x64/org/lwjgl/lwjgl.dll\\E"},
+    {"pattern":"\\Qwindows/x64/org/lwjgl/opengl/lwjgl_opengl.dll\\E"},
+
+    {"pattern":"\\Qskiko-windows-x64.dll\\E"},
+    {"pattern":"\\Qskiko-windows-x64.dll.sha256\\E"},
     {"pattern": "\\Qicudtl.dat.sha256\\E"}
   ]},
   "bundles":[{

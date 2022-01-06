@@ -155,14 +155,17 @@ fun getGraalVmHome() =
 nativeBuild {
     imageName.set("compose-native")
     mainClass.set(mainClassPathName)
-    debug.set(true)
+    debug.set(false)
     verbose.set(true)
     fallback.set(false)
+	sharedLibrary.set(false)
 
 //    configurationFileDirectories.setFrom(file(projectDir, "src/"))
     buildArgs.add("--initialize-at-run-time=org.lwjgl,java.awt,androidx.compose")
     buildArgs.add("--report-unsupported-elements-at-runtime")
 //    buildArgs.add("H:TempDirectory=$buildDir/tmp/$nativeImageDirName")
+    buildArgs.add("--allow-incomplete-classpath")
+	buildArgs.add("-H:NativeLinkerOption=prefs.lib")
 
     runtimeArgs.add("-Djava.awt.headless=false")
 
