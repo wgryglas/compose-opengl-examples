@@ -5,7 +5,8 @@ plugins {
     application
     java
     kotlin("jvm") version "1.5.31"
-    id("org.mikeneck.graalvm-native-image") version "v1.4.1"
+ //   id("org.mikeneck.graalvm-native-image") version "v1.4.1"
+    id("org.graalvm.buildtools.native") version "0.9.4"
     id("org.jetbrains.compose") version (System.getenv("COMPOSE_TEMPLATE_COMPOSE_VERSION") ?: "1.0.0-beta3")
 }
 
@@ -112,49 +113,59 @@ tasks.withType<JavaCompile> {
 fun getGraalVmHome() =
     System.getenv("GRAALVM_HOME") ?: graalvmPath ?: throw Exception("GRAALVM path is not specified as GRAALVM_HOME env variable or in gradle.properites file")
 
-nativeImage {
-    println(graalvmPath)
-//    mainClass = mainClassPathName
-    graalVmHome = getGraalVmHome()
-    buildType { build ->
-        build.executable {
-            main = mainClassPathName
-        }
-    }
-    executableName = project.name
-    outputDirectory = file("$buildDir/$nativeImageDirName")
-
-    arguments(
-        "--no-fallback",
-        "--initialize-at-run-time=org.lwjgl,java.awt,androidx.compose",
-        "--native-image-info",
-        "--verbose",
-        "--report-unsupported-elements-at-runtime",
-        //"-H:+TraceNativeToolUsage",
-        "-Djava.awt.headless=false",
-        "-H:TempDirectory=$buildDir/tmp/$nativeImageDirName"
-    )
-
-    // if (currentPlatform == "windows") {
-    //     finalizedBy removeUnneededDllFiles
-    // }
-    
-    // On windows change subsystem after generating native executable:
-    //
-    // EDITBIN /SUBSYSTEM:WINDOWS <executable.exe>
-    //
-    // details: https://github.com/oracle/graal/issues/2256
-}
-
-//javaexec { mainClass.set(mainClassPathName) }
-
-generateNativeImageConfig {
-    enabled = false
-    graalVmHome = getGraalVmHome()
-    byRunningApplicationWithoutArguments()
-}
-
-//tasks.withType<org.mikeneck.graalvm.DefaultGenerateNativeImageConfigTask> {
-//    mainClass.set(mainClassPathName)
+//nativeImage {
+//    graalVmHome = getGraalVmHome()
+//    buildType { build ->
+//        build.executable {
+//            main = mainClassPathName
+//        }
+//    }
+//    executableName = project.name
+//    outputDirectory = file("$buildDir/$nativeImageDirName")
+//
+//    arguments(
+//        "--no-fallback",
+//        "--initialize-at-run-time=org.lwjgl,java.awt,androidx.compose",
+//        "--native-image-info",
+//        "--verbose",
+//        "--report-unsupported-elements-at-runtime",
+//        //"-H:+TraceNativeToolUsage",
+//        "-Djava.awt.headless=false",
+//        "-H:TempDirectory=$buildDir/tmp/$nativeImageDirName"
+//    )
+//
+//    // if (currentPlatform == "windows") {
+//    //     finalizedBy removeUnneededDllFiles
+//    // }
+//
+//    // On windows change subsystem after generating native executable:
+//    //
+//    // EDITBIN /SUBSYSTEM:WINDOWS <executable.exe>
+//    //
+//    // details: https://github.com/oracle/graal/issues/2256
+//}
+//
+//generateNativeImageConfig {
+//    enabled = false
+//    graalVmHome = getGraalVmHome()
+//    byRunningApplicationWithoutArguments()
 //}
 
+
+nativeBuild {
+    imageName.set("compose-native")
+    mainClass.set(mainClassPathName)
+    debug.set(true)
+    verbose.set(true)
+    fallback.set(false)
+
+//    configurationFileDirectories.setFrom(file(projectDir, "src/"))
+    buildArgs.add("--initialize-at-run-time=org.lwjgl,java.awt,androidx.compose")
+    buildArgs.add("--report-unsupported-elements-at-runtime")
+//    buildArgs.add("H:TempDirectory=$buildDir/tmp/$nativeImageDirName")
+
+    runtimeArgs.add("-Djava.awt.headless=false")
+
+    agent.set(false)
+    useFatJar.set(true)
+}
